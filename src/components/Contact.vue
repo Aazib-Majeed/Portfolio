@@ -1,0 +1,29 @@
+<template>
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Write your message" required></textarea>
+      </div>
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+</template>
+
+<script>
+export default {
+  name: "Contact"
+}
+</script>

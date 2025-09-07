@@ -26,6 +26,34 @@ export default {
     Projects,
     Contact,
     Footer
+  },
+
+  mounted() {
+    const sections = document.querySelectorAll("section")
+    let isScrolling = false
+
+    window.addEventListener("wheel", (e) => {
+      if (isScrolling) return
+      isScrolling = true
+
+      const current = Math.round(window.scrollY / window.innerHeight)
+
+      let targetIndex = current
+      if (e.deltaY > 0 && current < sections.length - 1) {
+        targetIndex++ // scroll down
+      } else if (e.deltaY < 0 && current > 0) {
+        targetIndex-- // scroll up
+      }
+
+      window.scrollTo({
+        top: sections[targetIndex].offsetTop,
+        behavior: "smooth",
+      })
+
+      setTimeout(() => {
+        isScrolling = false
+      }, 800) // debounce time
+    })
   }
 }
 </script>

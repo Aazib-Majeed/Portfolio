@@ -4,8 +4,8 @@
 
     <!-- use a semantic nav element so the script can find links reliably -->
     <nav class="nav-links" aria-label="Main navigation">
-      <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -43,3 +43,4 @@ export default {
   background: rgba(66,185,131,0.05);
 }
 </style>
+

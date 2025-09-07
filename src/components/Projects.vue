@@ -1,50 +1,73 @@
 <template>
   <section id="projects" class="projects">
     <h2>Projects</h2>
-    <div class="project-list">
+    <div class="carousel">
+      <button class="nav left" @click="prevProject">&#10094;</button>
+      
       <ProjectCard
-        v-for="(project, index) in projects"
-        :key="index"
-        :title="project.title"
-        :description="project.description"
-        :link="project.link"
+        :title="projects[currentIndex].title"
+        :description="projects[currentIndex].description"
+        :link="projects[currentIndex].link"
+        :tools="projects[currentIndex].tools"
+        :image="projects[currentIndex].image"
       />
+      
+      <button class="nav right" @click="nextProject">&#10095;</button>
     </div>
   </section>
 </template>
 
 <script>
 import ProjectCard from "./ProjectCard.vue"
+const portfolioImg = "https://via.placeholder.com/400x250?text=Portfolio"
+const networkingImg = "https://via.placeholder.com/400x250?text=Networking"
+const embeddedImg = "https://via.placeholder.com/400x250?text=Embedded"
+const musicImg = "https://via.placeholder.com/400x250?text=Music+Player"
+
 
 export default {
   name: "Projects",
   components: { ProjectCard },
   data() {
     return {
-      projects: [
-        {
-          title: "Portfolio Website",
-          description: "A personal portfolio built with Vue.js and Tailwind.",
-          link: "#"
-        },
-        {
-          title: "Networking Project",
-          description: "A C++ and Python project showing networking concepts.",
-          link: "#"
-        },
-        {
-          title: "Embedded Systems Project",
-          description: "An ARM-based embedded project with real-time control.",
-          link: "#"
-        },
-        {
-          title: "Music Player in C++",
-          description: "A CLI based Music Player coded in C++ using Linked Lists and File Handling",
-          link: "#"  
-        }
-      ]
+      currentIndex: 0,
+projects: [
+  {
+    title: "Portfolio Website",
+    description: "A personal portfolio built with Vue.js and Tailwind.",
+    link: "https://github.com/yourusername/portfolio",
+    tools: ["Vue.js", "Tailwind", "Vite"],
+    image: portfolioImg
+  },
+  {
+    title: "Mini Database Engine",
+    description: `A C++ project emulating a basic database engine with the following features:
+- SQL-like Command Interface: Familiar syntax for database operations
+- Data Types: Support for INT and TEXT data types
+- Table Operations: CREATE TABLE, INSERT, SELECT, UPDATE, DELETE
+- Conditional Queries: WHERE clause support with comparison operators (=, !=, >, <, >=, <=)
+- Data Persistence: SAVE and LOAD commands for database serialization
+- Auto-incrementing IDs: Automatic row ID assignment
+- Error Handling: Robust validation and error reporting
+- User-friendly Interface: Formatted output and HELP command.`,
+    link: "https://github.com/yourusername/database-engine",
+    tools: ["C++"],
+    image: networkingImg
+  }
+]
+
+    }
+  },
+  methods: {
+    nextProject() {
+      this.currentIndex = (this.currentIndex + 1) % this.projects.length
+    },
+    prevProject() {
+      this.currentIndex =
+        (this.currentIndex - 1 + this.projects.length) % this.projects.length
     }
   }
 }
 </script>
 
+<style src="../style.css"></style>

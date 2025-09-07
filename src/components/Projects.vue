@@ -34,7 +34,11 @@ export default {
 projects: [
   {
     title: "Portfolio Website",
-    description: "A personal portfolio built with Vue.js and Tailwind.",
+    description: `A fully responsive personal portfolio designed and developed from scratch to showcase my 
+    projects, skills, and experience. Built with Vue.js and Vite for fast performance, and styled using 
+    custom CSS with modern design principles.This project demonstrates my ability to create clean, 
+    user-friendly, and visually appealing web applications while applying concepts like component-based development,
+    responsive design, and deployment pipelines.`,
     link: "https://github.com/yourusername/portfolio",
     tools: ["Vue.js", "Tailwind", "Vite"],
     image: portfolioImg
@@ -71,3 +75,4 @@ projects: [
 </script>
 
 <style src="../style.css"></style>
+

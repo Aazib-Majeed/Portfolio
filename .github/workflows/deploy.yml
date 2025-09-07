@@ -7,13 +7,19 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # 👈 this gives the workflow permission to push
+
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-node@v3
         with:
-          node-version: 20   # use Node 20+
+          node-version: 20   # Vite requires 20+
+
       - run: npm install
       - run: npm run build
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

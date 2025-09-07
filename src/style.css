@@ -20,7 +20,6 @@ body {
   color: #e0e0e0;
   line-height: 1.6;
 
-  /* Smooth snap scrolling */
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   overflow-x: hidden;
@@ -36,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: #4dabf7;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.25s, font-size 0.25s;
 }
 a:hover {
   text-decoration: underline;
@@ -73,9 +72,18 @@ img, video, canvas, svg {
   margin-left: 1rem;
   color: #e0e0e0;
   font-weight: 500;
+  transition: color 0.3s, font-size 0.3s, transform 0.3s;
 }
 .header nav a:hover {
   color: #4dabf7;
+}
+
+/* Active nav link */
+.header nav a.active {
+  color: #4dabf7;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transform: scale(1.1);
 }
 
 /* ========= Global Sections ========= */

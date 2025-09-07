@@ -5,8 +5,11 @@
       <div class="about-text">
         <h2>About Me</h2>
         <p>
-          I love working with Vue.js and building creative web applications.
-          My interests include Embedded Systems, Networking, and Web Development.
+          Hi! My name is Aazib Majeed. I am a Final year Bsc Computer Engineering student.
+          My key areas of interest include Embedded Systems,Machine Learning, and Web development.
+          I have done projects in each of these domains and have a fair understanding of each, My main
+          area of interest however is Embedded systems as my Final Year Project was in that domain. My main 
+          hobby is Video Games.
         </p>
       </div>
     </div>
@@ -48,3 +51,4 @@ export default {
   height: 30%;
 }
 </style>
+

@@ -1,9 +1,8 @@
 <template>
   <section id="contact" class="contact">
-    
+    <h2>Contact Me</h2>
     <div class="contact-container">
       <!-- Left: Contact Form -->
-      <h2>Contact Me</h2>
       <div class="c-left">
         <form>
           <div class="form-group">
@@ -27,15 +26,15 @@
 
       <!-- Right: Socials -->
       <div class="c-right">
-        <h2>Socials</h2>
+        <h3>Socials</h3>
         <div class="social-buttons">
-          <a href="https://github.com/yourusername" target="_blank" class="social-btn github">
+          <a href="https://github.com/yourusername" target="_blank" class="social-btn">
             <i class="fab fa-github"></i> GitHub
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-btn linkedin">
+          <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-btn">
             <i class="fab fa-linkedin"></i> LinkedIn
           </a>
-          <a href="mailto:your@email.com" class="social-btn email">
+          <a href="mailto:your@email.com" class="social-btn">
             <i class="fas fa-envelope"></i> Email
           </a>
         </div>
@@ -49,4 +48,3 @@ export default {
   name: "Contact",
 };
 </script>
-

@@ -213,12 +213,11 @@ section h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
-  width: min(1100px, 92vw);
+  width: min(1400px, 92vw);
   margin: 20px auto 0;
 }
 .skill-card {
   text-align: center;
-  width:25%;
   padding: 15px;
   border-radius: 12px;
   background: #20252b;

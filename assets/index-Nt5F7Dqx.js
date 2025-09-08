@@ -20,7 +20,7 @@
           • SQL-like Command Interface
           • Table Operations (CREATE, INSERT, SELECT, UPDATE, DELETE)
           • Data Persistence with SAVE/LOAD
-          • Auto-incrementing IDs and Error Handling`,link:"https://github.com/Aazib-Majeed/Mini-Database-Engine",tools:["C++"],image:Yl},{title:"Music Player",description:`A C++ project that basically acts like a Music Player with Features like:
+          • Auto-incrementing IDs and Error Handling`,link:"https://github.com/Aazib-Majeed/Mini_Database_Engine",tools:["C++"],image:Yl},{title:"Music Player",description:`A C++ project that basically acts like a Music Player with Features like:
           • Creating Playlists
           • Add or Delete songs from Playlists
           • Pause/Resume Songs

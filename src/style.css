@@ -316,6 +316,18 @@ section h2 {
 /* ========= Contact ========= */
 .contact {
   width: 100%;
+  margin:0;
+  padding:0;
+}
+.c-left {
+    width:50vw;
+    height: 100px;
+    float: left;
+}
+.c-right {
+    width: 50vw;
+    height: 100px;
+    float: right;
 }
 .contact .container {
   width: min(700px, 92vw);

@@ -1,5 +1,6 @@
 <template>
   <section id="contact" class="contact">
+    <div class="c-left">
     <h2>Contact Me</h2>
     <form>
       <div class="form-group">
@@ -19,6 +20,11 @@
 
       <button type="submit">Send</button>
     </form>
+    </div>
+    <div class="c-right">
+    <h2>Socials</h2>
+    
+    </div>
   </section>
 </template>
 
@@ -27,3 +33,4 @@ export default {
   name: "Contact"
 }
 </script>
+

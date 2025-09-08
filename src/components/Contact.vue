@@ -29,16 +29,16 @@
       <div class="c-right">
         <h2>Socials</h2>
         <div class="social-buttons">
-          <a href="https://github.com/yourusername" target="_blank" class="social-btn">
+          <a href="https://github.com/Aazib-Majeed" target="_blank" class="social-btn">
             <img src="@/assets/Contact/github.png" alt="GitHub" /> GitHub
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-btn">
+          <a href="www.linkedin.com/in/aazib-majeed-987595351" target="_blank" class="social-btn">
             <img src="@/assets/Contact/linkedin.png" alt="LinkedIn" /> LinkedIn
           </a>
-          <a href="mailto:yourgmail@gmail.com" class="social-btn">
+          <a href="mailto:aazibmajeed671@gmail@gmail.com" class="social-btn">
             <img src="@/assets/Contact/gmail.png" alt="Gmail" /> Gmail
           </a>
-          <a href="mailto:youroutlook@outlook.com" class="social-btn">
+          <a href="mailto:tenja135@outlook.com" class="social-btn">
             <img src="@/assets/Contact/outlook.png" alt="Outlook" /> Outlook
           </a>
         </div>
@@ -52,3 +52,4 @@ export default {
   name: "Contact",
 };
 </script>
+

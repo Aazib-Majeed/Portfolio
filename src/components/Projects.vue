@@ -76,7 +76,7 @@ export default {
           description: `A fully responsive personal portfolio designed and developed from scratch to showcase my 
           projects, skills, and experience. Built with Vue.js and Vite for fast performance, and styled using 
           custom CSS with modern design principles.`,
-          link: "https://github.com/yourusername/portfolio",
+          link: "https://github.com/Aazib-majeed/Portfolio",
           tools: ["Vue.js", "Tailwind", "Vite"],
           image: portfolioImg,
         },
@@ -87,7 +87,7 @@ export default {
           • Table Operations (CREATE, INSERT, SELECT, UPDATE, DELETE)
           • Data Persistence with SAVE/LOAD
           • Auto-incrementing IDs and Error Handling`,
-          link: "https://github.com/yourusername/database-engine",
+          link: "https://github.com/Aazib-Majeed/Mini-Database-Engine",
           tools: ["C++"],
           image: networkingImg,
         },
@@ -130,4 +130,5 @@ export default {
 </script>
 
 <style src="../style.css"></style>
+
 

@@ -379,6 +379,7 @@ button:hover {
 }
 
 /* Right side: socials */
+/* Right side: socials */
 .c-right {
   flex: 1;
   text-align: left;
@@ -405,6 +406,7 @@ button:hover {
   border-radius: 12px;
   text-decoration: none;
   color: white;
+  background: #333; /* Same color for all */
   transition: transform 0.2s, background 0.3s;
 }
 
@@ -412,28 +414,8 @@ button:hover {
   font-size: 1.5rem;
 }
 
-/* Different brand colors */
-.social-btn.github {
-  background: #333;
-}
-.social-btn.github:hover {
+.social-btn:hover {
   background: #444;
-  transform: translateY(-3px);
-}
-
-.social-btn.linkedin {
-  background: #0a66c2;
-}
-.social-btn.linkedin:hover {
-  background: #0d74d1;
-  transform: translateY(-3px);
-}
-
-.social-btn.email {
-  background: #d93025;
-}
-.social-btn.email:hover {
-  background: #e6453f;
   transform: translateY(-3px);
 }
 

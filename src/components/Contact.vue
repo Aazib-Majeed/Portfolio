@@ -27,11 +27,17 @@
       <!-- Right: Socials -->
       <div class="c-right">
         <h3>Socials</h3>
-        <ul class="social-links">
-          <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
-          <li><a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a></li>
-          <li><a href="mailto:your@email.com">Email</a></li>
-        </ul>
+        <div class="social-buttons">
+          <a href="https://github.com/yourusername" target="_blank" class="social-btn github">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-btn linkedin">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="mailto:your@email.com" class="social-btn email">
+            <i class="fas fa-envelope"></i> Email
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -42,5 +48,3 @@ export default {
   name: "Contact",
 };
 </script>
-
-

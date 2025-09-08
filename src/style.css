@@ -73,8 +73,12 @@ img, video, canvas, svg {
   margin: 0;
   font-weight: 600;
 }
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 .header nav a {
-  margin-left: 1rem;
   color: #e0e0e0;
   font-weight: 500;
   font-size: 1rem;
@@ -127,12 +131,12 @@ section h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 80px; /* space for controls */
+  padding-bottom: 80px;
 }
 
 .carousel {
   position: relative;
-  display: block; /* override old flex */
+  display: block;
   width: var(--carousel-radius);
   height: var(--carousel-radius);
   transform-style: preserve-3d;
@@ -152,14 +156,14 @@ section h2 {
   cursor: pointer;
   filter: blur(3px);
   opacity: 0.5;
-  pointer-events: none; /* disable clicks unless active */
+  pointer-events: none;
 }
 
 .memory-card.active {
   filter: blur(0);
   opacity: 1;
   pointer-events: auto;
-  transform: scale(1.05) translateZ(20px); /* pop effect */
+  transform: scale(1.05) translateZ(20px);
 }
 
 .card-inner {
@@ -390,12 +394,12 @@ button:hover {
 
 .social-buttons {
   display: flex;
-  flex-wrap: wrap;       /* allows multiple per row */
+  flex-wrap: wrap;
   gap: 1.5rem;
 }
 
 .social-btn {
-  flex: 1 1 calc(50% - 1.5rem); /* two per row on desktop */
+  flex: 1 1 calc(50% - 1.5rem);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -432,6 +436,15 @@ button:hover {
 }
 
 /* ========= Responsive ========= */
+@media (max-width: 1100px) {
+  section {
+    padding: 3rem 1.5rem;
+  }
+  .header {
+    padding: 0 1rem;
+  }
+}
+
 @media (max-width: 900px) {
   :root {
     --carousel-radius: 320px;
@@ -444,6 +457,7 @@ button:hover {
   .contact-container {
     flex-direction: column;
     text-align: center;
+    gap: 2rem;
   }
   .c-left, .c-right {
     width: 100%;
@@ -471,5 +485,21 @@ button:hover {
   .control-btn {
     width: 36px;
     height: 36px;
+  }
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 0.5rem 1rem;
+  }
+  .header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+  section {
+    padding: 2.5rem 1rem;
+  }
+  .footer {
+    font-size: 0.8rem;
   }
 }

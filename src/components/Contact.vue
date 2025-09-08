@@ -28,9 +28,9 @@
       <div class="c-right">
         <h3>Socials</h3>
         <ul class="social-links">
-          <li class="s-link"><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
-          <li class="s-link"><a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a></li>
-          <li class="s-link"><a href="mailto:your@email.com">Email</a></li>
+          <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a></li>
+          <li><a href="mailto:your@email.com">Email</a></li>
         </ul>
       </div>
     </div>
@@ -42,4 +42,5 @@ export default {
   name: "Contact",
 };
 </script>
+
 

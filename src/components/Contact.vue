@@ -35,7 +35,7 @@
           <a href="www.linkedin.com/in/aazib-majeed-987595351" target="_blank" class="social-btn">
             <img src="../assets/Contact/linkedin.png" alt="LinkedIn" /> LinkedIn
           </a>
-          <a href="mailto:aazibmajeed671@gmail@gmail.com" class="social-btn">
+          <a href="mailto:aazibmajeed671@gmail.com" class="social-btn">
             <img src="../assets/Contact/gmail.png" alt="Gmail" /> Gmail
           </a>
           <a href="mailto:tenja135@outlook.com" class="social-btn">
@@ -52,5 +52,6 @@ export default {
   name: "Contact",
 };
 </script>
+
 
 

@@ -1,10 +1,10 @@
 <template>
   <section id="contact" class="contact">
-    
+   
     <div class="contact-container">
       <!-- Left: Contact Form -->
       <div class="c-left">
-        <h2>Contact Me</h2>
+         <h2>Contact Me</h2>
         <form>
           <div class="form-group">
             <label for="name">Name</label>
@@ -30,13 +30,16 @@
         <h2>Socials</h2>
         <div class="social-buttons">
           <a href="https://github.com/yourusername" target="_blank" class="social-btn">
-            <i class="fab fa-github"></i> GitHub
+            <img src="@/assets/Contact/github.png" alt="GitHub" /> GitHub
           </a>
           <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-btn">
-            <i class="fab fa-linkedin"></i> LinkedIn
+            <img src="@/assets/Contact/linkedin.png" alt="LinkedIn" /> LinkedIn
           </a>
-          <a href="mailto:your@email.com" class="social-btn">
-            <i class="fas fa-envelope"></i> Email
+          <a href="mailto:yourgmail@gmail.com" class="social-btn">
+            <img src="@/assets/Contact/gmail.png" alt="Gmail" /> Gmail
+          </a>
+          <a href="mailto:youroutlook@outlook.com" class="social-btn">
+            <img src="@/assets/Contact/outlook.png" alt="Outlook" /> Outlook
           </a>
         </div>
       </div>
@@ -49,4 +52,3 @@ export default {
   name: "Contact",
 };
 </script>
-

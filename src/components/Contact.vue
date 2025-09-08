@@ -1,9 +1,10 @@
 <template>
   <section id="contact" class="contact">
-    <h2>Contact Me</h2>
+    
     <div class="contact-container">
       <!-- Left: Contact Form -->
       <div class="c-left">
+        <h2>Contact Me</h2>
         <form>
           <div class="form-group">
             <label for="name">Name</label>
@@ -26,7 +27,7 @@
 
       <!-- Right: Socials -->
       <div class="c-right">
-        <h3>Socials</h3>
+        <h2>Socials</h2>
         <div class="social-buttons">
           <a href="https://github.com/yourusername" target="_blank" class="social-btn">
             <i class="fab fa-github"></i> GitHub
@@ -48,3 +49,4 @@ export default {
   name: "Contact",
 };
 </script>
+

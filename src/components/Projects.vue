@@ -8,7 +8,7 @@
           v-for="(project, index) in projects"
           :key="index"
           class="memory-card"
-          :class="{ flipped: flippedIndex === index }"
+          :class="{ flipped: flippedIndex === index, active: index === currentIndex }"
           :style="{ transform: `rotateY(${index * angle}deg) translateZ(${radius}px)` }"
           @click="flipCard(index)"
         >
@@ -58,40 +58,17 @@ import ProjectCard from "./ProjectCard.vue";
 
 const portfolioImg = "https://via.placeholder.com/400x250?text=Portfolio";
 const networkingImg = "https://via.placeholder.com/400x250?text=Networking";
-const MusicImg = "https://via.placeholder.com/400x250?text=Music";
 
-  
 export default {
   name: "Projects",
   components: { ProjectCard },
   data() {
-  return {
-    theta: 0,
-    radius: 400,
-    angle: 0,
-    flippedIndex: null,
-    currentIndex: 0, // active card index
-    projects: [/* ... your projects ... */]
-  };
-},
-mounted() {
-  this.angle = 360 / this.projects.length;
-},
-methods: {
-  nextCard() {
-    this.theta -= this.angle;
-    this.currentIndex = (this.currentIndex + 1) % this.projects.length;
-  },
-  prevCard() {
-    this.theta += this.angle;
-    this.currentIndex = (this.currentIndex - 1 + this.projects.length) % this.projects.length;
-  },
-  flipCard(index) {
-    if (index === this.currentIndex) {
-      this.flippedIndex = this.flippedIndex === index ? null : index;
-    }
-  }
-},
+    return {
+      theta: 0,
+      radius: 400,
+      angle: 0,
+      flippedIndex: null,
+      currentIndex: 0, // track which card is front
       projects: [
         {
           title: "Portfolio Website",
@@ -113,16 +90,6 @@ methods: {
           tools: ["C++"],
           image: networkingImg,
         },
-        {
-          title: "Music Player",
-          description: `A C++ project that basically acts like a music player having the following features:
-          • Read the contents of a folder and store song name in a Doubly linked list
-          • Create Playlists
-          • Add or delete songs from Playlist`,
-          link: "https://github.com/yourusername/database-engine",
-          tools: ["C++"],
-          image: MusicImg,
-        },
       ],
     };
   },
@@ -132,18 +99,22 @@ methods: {
   methods: {
     nextCard() {
       this.theta -= this.angle;
+      this.currentIndex = (this.currentIndex + 1) % this.projects.length;
+      this.flippedIndex = null; // reset flip when changing card
     },
     prevCard() {
       this.theta += this.angle;
+      this.currentIndex =
+        (this.currentIndex - 1 + this.projects.length) % this.projects.length;
+      this.flippedIndex = null;
     },
     flipCard(index) {
-      this.flippedIndex = this.flippedIndex === index ? null : index;
+      if (index === this.currentIndex) {
+        this.flippedIndex = this.flippedIndex === index ? null : index;
+      }
     },
   },
 };
-
 </script>
 
 <style src="../style.css"></style>
-
-

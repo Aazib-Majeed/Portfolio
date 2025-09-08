@@ -399,7 +399,9 @@ button:hover {
 }
 
 .social-links a {
-  color: #4dabf7;
+  width:30vw;
+  border-radius:10px;
+  background:solid grey;
   font-weight: 500;
   transition: color 0.3s;
 }

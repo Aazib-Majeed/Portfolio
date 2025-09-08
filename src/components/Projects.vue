@@ -58,7 +58,9 @@ import ProjectCard from "./ProjectCard.vue";
 
 const portfolioImg = "https://via.placeholder.com/400x250?text=Portfolio";
 const networkingImg = "https://via.placeholder.com/400x250?text=Networking";
+const MusicImg = "https://via.placeholder.com/400x250?text=Music";
 
+  
 export default {
   name: "Projects",
   components: { ProjectCard },
@@ -89,6 +91,16 @@ export default {
           tools: ["C++"],
           image: networkingImg,
         },
+        {
+          title: "Music Player",
+          description: `A C++ project that basically acts like a music player having the following features:
+          • Read the contents of a folder and store song name in a Doubly linked list
+          • Create Playlists
+          • Add or delete songs from Playlist`,
+          link: "https://github.com/yourusername/database-engine",
+          tools: ["C++"],
+          image: MusicImg,
+        },
       ],
     };
   },
@@ -110,3 +122,4 @@ export default {
 </script>
 
 <style src="../style.css"></style>
+

@@ -399,11 +399,11 @@ button:hover {
 }
 
 .social-links a {
-  width:30vw;
+  width:100vw;
   color: #e0e0e0;
   height:10vw;
   border-radius:10px;
-  margin:0 auto;
+  margin:20px auto;
   background:#3b3b3b;
   font-weight: 500;
   padding:10px;

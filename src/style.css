@@ -157,12 +157,19 @@ section h2 {
   height: var(--card-h);
   left: 50%;
   top: 50%;
-  /* Center the card without touching the transform set inline by Vue */
   margin-left: calc(var(--card-w) / -2);
   margin-top: calc(var(--card-h) / -2);
   transform-style: preserve-3d;
-  transition: transform 0.8s;
+  transition: transform 0.8s, filter 0.6s, opacity 0.6s;
   cursor: pointer;
+  filter: blur(3px);
+  opacity: 0.5;
+}
+
+/* Active card = sharp and full opacity */
+.memory-card[data-active="true"] {
+  filter: blur(0);
+  opacity: 1;
 }
 
 .card-inner {

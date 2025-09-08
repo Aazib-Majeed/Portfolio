@@ -403,7 +403,8 @@ button:hover {
   color: #e0e0e0;
   height:10vw;
   border-radius:10px;
-  background:grey;
+  margin:0 auto;
+  background:#3b3b3b;
   font-weight: 500;
   padding:10px;
   transition: color 0.3s;

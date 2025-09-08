@@ -87,7 +87,7 @@ export default {
           • Table Operations (CREATE, INSERT, SELECT, UPDATE, DELETE)
           • Data Persistence with SAVE/LOAD
           • Auto-incrementing IDs and Error Handling`,
-          link: "https://github.com/Aazib-Majeed/Mini-Database-Engine",
+          link: "https://github.com/Aazib-Majeed/Mini_Database_Engine",
           tools: ["C++"],
           image: networkingImg,
         },
@@ -130,5 +130,6 @@ export default {
 </script>
 
 <style src="../style.css"></style>
+
 
 

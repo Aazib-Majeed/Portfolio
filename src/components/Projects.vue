@@ -65,11 +65,33 @@ export default {
   name: "Projects",
   components: { ProjectCard },
   data() {
-    return {
-      theta: 0,
-      radius: 400,
-      angle: 0,
-      flippedIndex: null,
+  return {
+    theta: 0,
+    radius: 400,
+    angle: 0,
+    flippedIndex: null,
+    currentIndex: 0, // active card index
+    projects: [/* ... your projects ... */]
+  };
+},
+mounted() {
+  this.angle = 360 / this.projects.length;
+},
+methods: {
+  nextCard() {
+    this.theta -= this.angle;
+    this.currentIndex = (this.currentIndex + 1) % this.projects.length;
+  },
+  prevCard() {
+    this.theta += this.angle;
+    this.currentIndex = (this.currentIndex - 1 + this.projects.length) % this.projects.length;
+  },
+  flipCard(index) {
+    if (index === this.currentIndex) {
+      this.flippedIndex = this.flippedIndex === index ? null : index;
+    }
+  }
+},
       projects: [
         {
           title: "Portfolio Website",
@@ -119,7 +141,9 @@ export default {
     },
   },
 };
+
 </script>
 
 <style src="../style.css"></style>
+
 

@@ -218,6 +218,7 @@ section h2 {
 }
 .skill-card {
   text-align: center;
+  width:25%;
   padding: 15px;
   border-radius: 12px;
   background: #20252b;

@@ -400,16 +400,20 @@ button:hover {
 
 .social-links a {
   width:30vw;
+  color: #e0e0e0;
   height:10vw;
   border-radius:10px;
   background:grey;
   font-weight: 500;
+  padding:10px;
   transition: color 0.3s;
 }
 
 .social-links a:hover {
   width:32vw;
   height:12vw;
+  text-decoration:none;
+  
 }
 
 /* ========= Footer ========= */

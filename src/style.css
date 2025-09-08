@@ -13,7 +13,7 @@ html {
   box-sizing: inherit;
 }
 
-:root{
+:root {
   /* 3D carousel sizing */
   --carousel-radius: 380px;
   --card-w: 300px;
@@ -118,18 +118,7 @@ section h2 {
   padding: 3rem 1rem;
 }
 
-/* Legacy carousel block from your previous layout (kept for completeness)
-   Note: We override it below for the 3D carousel. */
-.carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  width: min(1100px, 92vw);
-  margin: 0 auto;
-}
-
-/* ===== 3D Carousel Styles (OVERRIDES) ===== */
+/* ===== 3D Carousel Styles ===== */
 .carousel-container {
   position: relative;
   width: 100%;
@@ -141,10 +130,9 @@ section h2 {
   padding-bottom: 80px; /* space for controls */
 }
 
-/* Override legacy flex to make the 3D stage work */
 .carousel {
   position: relative;
-  display: block; /* IMPORTANT: override previous display:flex */
+  display: block; /* override old flex */
   width: var(--carousel-radius);
   height: var(--carousel-radius);
   transform-style: preserve-3d;
@@ -164,12 +152,14 @@ section h2 {
   cursor: pointer;
   filter: blur(3px);
   opacity: 0.5;
+  pointer-events: none; /* disable clicks unless active */
 }
 
-/* Active card = sharp and full opacity */
-.memory-card[data-active="true"] {
+.memory-card.active {
   filter: blur(0);
   opacity: 1;
+  pointer-events: auto;
+  transform: scale(1.05) translateZ(20px); /* pop effect */
 }
 
 .card-inner {
@@ -231,13 +221,12 @@ section h2 {
   background: rgba(50, 50, 70, 0.9);
 }
 
-/* ========= Project Card (used on front/back of 3D card) ========= */
+/* ========= Project Card ========= */
 .project-card {
-  /* Make the card fill the 3D side nicely */
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  background: transparent; /* sides already have backgrounds */
+  background: transparent;
   border-radius: 0;
   width: 100%;
   max-width: 100%;
@@ -375,7 +364,7 @@ button:hover {
 
 /* ========= Responsive ========= */
 @media (max-width: 900px) {
-  :root{
+  :root {
     --carousel-radius: 320px;
     --card-w: 260px;
     --card-h: 340px;
@@ -385,7 +374,7 @@ button:hover {
 }
 
 @media (max-width: 600px) {
-  :root{
+  :root {
     --carousel-radius: 270px;
     --card-w: 230px;
     --card-h: 320px;

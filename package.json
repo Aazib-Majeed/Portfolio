@@ -17,5 +17,6 @@
     "typescript": "^5.9.2",
     "vite": "^7.1.2",
     "vue-tsc": "^3.0.6"
+    "@emailjs/browser": "^3.11.0"
   }
 }

@@ -49,7 +49,7 @@ body {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  color: #ffffff;
+  color: var(--bright-yellow);
   font-weight: 600;
 }
 

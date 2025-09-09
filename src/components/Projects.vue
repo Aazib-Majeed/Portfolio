@@ -21,6 +21,7 @@
                 :link="project.link"
                 :tools="project.tools"
                 :image="project.image"
+                :embed="project.embed"
                 mode="front"
               />
             </div>
@@ -33,6 +34,7 @@
                 :link="project.link"
                 :tools="project.tools"
                 :image="project.image"
+                :embed="project.embed"
                 mode="back"
               />
             </div>
@@ -59,7 +61,7 @@ import ProjectCard from "./ProjectCard.vue";
 const portfolioImg = "https://via.placeholder.com/400x250?text=Portfolio";
 const networkingImg = "https://via.placeholder.com/400x250?text=Networking";
 const MusicImg = "https://via.placeholder.com/400x250?text=Music";
-  
+
 export default {
   name: "Projects",
   components: { ProjectCard },
@@ -69,7 +71,7 @@ export default {
       radius: 400,
       angle: 0,
       flippedIndex: null,
-      currentIndex: 0, // track which card is front
+      currentIndex: 0,
       projects: [
         {
           title: "Portfolio Website",
@@ -88,6 +90,7 @@ export default {
           • Data Persistence with SAVE/LOAD
           • Auto-incrementing IDs and Error Handling`,
           link: "https://github.com/Aazib-Majeed/Mini_Database_Engine",
+          embed: "https://your-repl-name.your-username.repl.co", // 🔥 Replit live demo
           tools: ["C++"],
           image: networkingImg,
         },
@@ -112,7 +115,7 @@ export default {
     nextCard() {
       this.theta -= this.angle;
       this.currentIndex = (this.currentIndex + 1) % this.projects.length;
-      this.flippedIndex = null; // reset flip when changing card
+      this.flippedIndex = null;
     },
     prevCard() {
       this.theta += this.angle;
@@ -130,6 +133,3 @@ export default {
 </script>
 
 <style src="../style.css"></style>
-
-
-

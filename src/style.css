@@ -523,3 +523,17 @@ button:hover {
     justify-content: center;
   }
 }
+/* Embed container for project demos */
+.embed-container {
+  width: 100%;
+  height: 48%; /* same height as images */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.embed-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+

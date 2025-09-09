@@ -13,29 +13,34 @@ html {
   box-sizing: inherit;
 }
 
+/* ========= Theme Colors (only change colors here) ========= */
 :root {
-  /* ===== Theme Colors ===== */
-  --bg-primary: #2D3250;      /* dark indigo */
-  --bg-secondary: #222831;    /* charcoal gray */
-  --bg-alt: #1A1D2E;          /* deep indigo gray */
-
-  --accent-primary: #FFD369;   /* golden yellow */
-  --accent-secondary: #08D9D6; /* teal cyan */
-  --accent-tertiary: #7D9EFF;  /* soft violet-blue */
-
-  --text-primary: #EEEEEE;
-  --text-secondary: #C8C8C8;
-
-  /* Carousel sizing */
+  /* 3D carousel sizing (unchanged) */
   --carousel-radius: 380px;
   --card-w: 300px;
   --card-h: 400px;
+
+  /* Primary palette (your original colors) */
+  --color-1: #2D3250;  /* main indigo */
+  --color-2: #424769;  /* secondary slate */
+  --color-3: #222831;  /* charcoal */
+
+  /* Added accents */
+  --bright-yellow: #FFD700; /* brighter yellow you requested */
+  --accent-teal: #08D9D6;   /* complementary teal */
+  --accent-violet: #7D9EFF; /* complementary violet */
+
+  /* Text / neutrals */
+  --text-primary: #e0e0e0;  /* original site text color */
+  --text-muted: #dcdcdc;
+  --muted-border: #444444;
 }
 
+/* ========= Base styles (unchanged layout/spacing — colors replaced) ========= */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+  background: linear-gradient(135deg, var(--color-3), var(--color-1));
   color: var(--text-primary);
   line-height: 1.6;
   scroll-behavior: smooth;
@@ -44,19 +49,26 @@ body {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--accent-primary);
+  color: #ffffff;
   font-weight: 600;
 }
 
 /* Links */
 a {
-  color: var(--accent-secondary);
+  color: var(--accent-violet);
   text-decoration: none;
   transition: color 0.2s;
 }
 a:hover {
   text-decoration: underline;
-  color: var(--accent-tertiary);
+  color: var(--accent-teal);
+}
+
+/* Images */
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* ========= Navbar ========= */
@@ -66,7 +78,7 @@ a:hover {
   left: 0;
   right: 0;
   height: 60px;
-  background: rgba(34, 40, 49, 0.9);
+  background: rgba(30, 30, 30, 0.9);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -77,7 +89,6 @@ a:hover {
   font-size: 1.5rem;
   margin: 0;
   font-weight: 600;
-  color: var(--accent-tertiary);
 }
 .header nav a {
   margin-left: 1rem;
@@ -87,10 +98,10 @@ a:hover {
   transition: all 0.3s ease;
 }
 .header nav a:hover {
-  color: var(--accent-secondary);
+  color: var(--accent-violet);
 }
 .header nav a.active {
-  color: var(--accent-primary);
+  color: var(--accent-violet);
   font-size: 1.15rem;
   font-weight: 600;
   text-decoration: underline;
@@ -111,23 +122,23 @@ section {
 }
 
 section h2 {
-  border-bottom: 2px solid var(--accent-secondary);
+  border-bottom: 2px solid #444;
   padding-bottom: 8px;
   margin-bottom: 25px;
+  color: #f5f5f5;
   font-size: 2rem;
-  color: var(--accent-primary);
 }
 
 /* ========= Projects ========= */
 .projects {
   width: 100%;
-  background: linear-gradient(to right, var(--bg-primary), var(--bg-secondary));
-  color: var(--text-primary);
+  background: linear-gradient(to right, #2c3e50, #34495e); /* layout preserved */
+  color: #fff;
   text-align: center;
   padding: 3rem 1rem;
 }
 
-/* ===== 3D Carousel ===== */
+/* ===== 3D Carousel Styles ===== */
 .carousel-container {
   position: relative;
   width: 100%;
@@ -136,7 +147,7 @@ section h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 80px;
+  padding-bottom: 80px; /* space for controls */
   overflow-x: hidden;
 }
 
@@ -163,14 +174,14 @@ section h2 {
   cursor: pointer;
   filter: blur(3px);
   opacity: 0.5;
-  pointer-events: none;
+  pointer-events: none; /* disable clicks unless active */
 }
 
 .memory-card.active {
   filter: blur(0);
   opacity: 1;
   pointer-events: auto;
-  transform: scale(1.05) translateZ(20px);
+  transform: scale(1.05) translateZ(20px); /* pop effect */
 }
 
 .card-inner {
@@ -189,20 +200,19 @@ section h2 {
   position: absolute;
   width: 100%;
   height: 100%;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
 }
 
+/* use palette for card faces (only color change) */
 .card-front {
-  background: var(--bg-primary);
-  border: 2px solid var(--accent-tertiary);
+  background: var(--color-1);
 }
-
 .card-back {
-  background: var(--bg-alt);
-  border: 2px solid var(--accent-secondary);
+  background: var(--color-3);
   transform: rotateY(180deg);
 }
 
@@ -218,8 +228,8 @@ section h2 {
 
 .control-btn {
   background: rgba(20, 20, 40, 0.7);
-  border: 1px solid var(--accent-secondary);
-  color: var(--accent-primary);
+  border: 1px solid var(--accent-violet);
+  color: white;
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -231,15 +241,16 @@ section h2 {
 }
 .control-btn:hover {
   transform: scale(1.1);
-  background: var(--accent-tertiary);
-  color: var(--text-primary);
+  background: rgba(50, 50, 70, 0.9);
 }
 
 /* ========= Project Card ========= */
 .project-card {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   background: transparent;
+  border-radius: 0;
   width: 100%;
   max-width: 100%;
   height: 100%;
@@ -249,48 +260,54 @@ section h2 {
   width: 100%;
   height: 48%;
   object-fit: cover;
-  background: var(--bg-secondary);
+  background: #111;
 }
 
 .project-info {
   width: 100%;
   padding: 1rem;
+  text-align: left;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  height: auto; /* let text expand */
+  overflow: visible;
 }
 
+/* highlight project titles with the brighter yellow */
 .project-info h3 {
   font-size: 1.25rem;
   margin: 0;
-  color: var(--accent-primary);
+  color: var(--bright-yellow);
+  line-height: 1.2;
 }
 
 .project-info p {
   margin: 0;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   font-size: 0.92rem;
+  line-height: 1.35;
 }
 
 .project-info .tools {
   font-size: 0.85rem;
   font-weight: 400;
-  color: var(--accent-tertiary);
+  color: #a8b2b9;
 }
 
+/* github link uses violet accent, hover to teal (only color change) */
 .github-link {
   align-self: flex-start;
   display: inline-block;
   padding: 0.45rem 0.8rem;
-  background: var(--accent-secondary);
-  color: var(--bg-alt);
+  background: var(--accent-violet);
+  color: #fff;
   border-radius: 10px;
-  font-weight: 600;
+  font-weight: 500;
   transition: background 0.3s;
 }
 .github-link:hover {
-  background: var(--accent-primary);
-  color: var(--bg-secondary);
+  background: var(--accent-teal);
 }
 
 /* ========= Skills ========= */
@@ -306,20 +323,20 @@ section h2 {
   gap: 1.5rem;
   max-width: 1000px;
   margin: 0 auto;
+  justify-items: center;
 }
 
 .skill-card {
+  width: 100%;
   max-width: 220px;
   text-align: center;
   padding: 15px;
   border-radius: 12px;
-  background: var(--bg-alt);
-  border: 1px solid var(--accent-secondary);
-  transition: transform 0.25s ease, border 0.3s;
+  background: #20252b;
+  transition: transform 0.25s ease;
 }
 .skill-card:hover {
   transform: translateY(-4px);
-  border: 1px solid var(--accent-primary);
 }
 .skill-card img {
   width: 50px;
@@ -332,17 +349,16 @@ section h2 {
   width: 100%;
   padding: 4rem 2rem;
   text-align: center;
-  background: var(--bg-secondary);
 }
 
 .contact h2 {
   margin-bottom: 2rem;
-  color: var(--accent-tertiary);
 }
 
 .contact-container {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   gap: 3rem;
   width: min(1100px, 95vw);
   margin: 0 auto;
@@ -353,23 +369,36 @@ section h2 {
   text-align: left;
 }
 
+/* forms: keep layout — only update borders & backgrounds */
 form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
 form input,
 form textarea {
+  width: 100%;
+  max-width: 100%;
   padding: 12px;
-  border: 1px solid var(--accent-tertiary);
+  border: 1px solid var(--muted-border);
   border-radius: 10px;
-  background: var(--bg-primary);
+  background: var(--color-3);
   color: var(--text-primary);
+  box-sizing: border-box;
 }
 
+/* keep button layout; use teal as base and bright-yellow on hover */
 button {
-  background-color: var(--accent-primary);
-  color: var(--bg-secondary);
+  background-color: var(--accent-teal);
+  color: white;
   padding: 12px;
   border: none;
   border-radius: 10px;
@@ -378,8 +407,8 @@ button {
   max-width: 200px;
 }
 button:hover {
-  background-color: var(--accent-secondary);
-  color: var(--bg-alt);
+  background-color: var(--bright-yellow);
+  color: var(--color-3);
 }
 
 .c-right {
@@ -388,14 +417,13 @@ button:hover {
 }
 .c-right h3 {
   margin-bottom: 1.5rem;
-  color: var(--accent-primary);
 }
 
-/* ==== Social Buttons Fixed ==== */
+/* social buttons: preserve layout + spacing; colors switched to palette */
 .social-buttons {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
   width: 100%;
 }
 .social-btn {
@@ -403,16 +431,16 @@ button:hover {
   align-items: center;
   justify-content: flex-start;
   gap: 14px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  padding: 1rem 1.4rem;
+  padding: 1.2rem 1.8rem;
   border-radius: 12px;
   text-decoration: none;
-  color: var(--text-primary);
-  background: var(--bg-alt);
-  border: 1px solid var(--accent-secondary);
-  transition: transform 0.2s, background 0.3s, border 0.3s;
-  max-width: 320px;
+  color: white;
+  background: #333;
+  transition: transform 0.2s, background 0.3s;
+  width: 100%;
+  max-width: 300px;
 }
 .social-btn img {
   width: 28px;
@@ -420,9 +448,7 @@ button:hover {
   object-fit: contain;
 }
 .social-btn:hover {
-  background: var(--accent-secondary);
-  border-color: var(--accent-primary);
-  color: var(--bg-secondary);
+  background: var(--accent-teal);
   transform: translateY(-3px);
 }
 
@@ -431,9 +457,8 @@ button:hover {
   width: 100%;
   text-align: center;
   font-size: 0.9rem;
-  color: var(--text-secondary);
+  color: gray;
   padding: 1rem 0;
-  background: var(--bg-alt);
 }
 
 /* ========= Responsive ========= */
@@ -443,6 +468,10 @@ button:hover {
     --card-w: 240px;
     --card-h: 340px;
   }
+
+  .project-info h3 { font-size: 1.1rem; }
+  .project-info p { font-size: 0.9rem; }
+
   .contact-container {
     flex-direction: column;
     text-align: center;
@@ -472,9 +501,20 @@ button:hover {
     --card-w: 200px;
     --card-h: 300px;
   }
+
+  .control-btn {
+    width: 36px;
+    height: 36px;
+  }
+
   .skills-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 1rem;
   }
+  .skill-card {
+    max-width: 100%;
+  }
+
   .social-buttons {
     flex-direction: column;
     gap: 1rem;

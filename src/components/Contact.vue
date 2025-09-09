@@ -50,7 +50,8 @@
 </template>
 
 <script>
-import emailjs from "emailjs-com";
+import emailjs from '@emailjs/browser';
+
 
 export default {
   name: "Contact",
@@ -103,3 +104,4 @@ export default {
   margin-top: 10px;
 }
 </style>
+

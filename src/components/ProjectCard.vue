@@ -6,8 +6,9 @@
         <iframe
           :src="embed"
           width="100%"
-          height="100%"
+          height="400"
           frameborder="0"
+          allowfullscreen
         ></iframe>
       </div>
       <img v-else :src="image" :alt="title" class="project-image" />
@@ -43,4 +44,18 @@ export default {
 };
 </script>
 
-<style src="../style.css"></style>
+<style scoped>
+.embed-container {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+</style>

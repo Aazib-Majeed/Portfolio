@@ -82,18 +82,19 @@ export default {
           tools: ["Vue.js", "Tailwind", "Vite"],
           image: portfolioImg,
         },
-        {
-          title: "Mini Database Engine",
-          description: `A C++ project emulating a basic database engine with the following features:
-          • SQL-like Command Interface
-          • Table Operations (CREATE, INSERT, SELECT, UPDATE, DELETE)
-          • Data Persistence with SAVE/LOAD
-          • Auto-incrementing IDs and Error Handling`,
-          link: "https://github.com/Aazib-Majeed/Mini_Database_Engine",
-          embed: "https://@aazibmajeed671/MiniDatabaseEngine-1?embed=true&theme=dark", // 🔥 Replit live demo
-          tools: ["C++"],
-          image: networkingImg,
-        },
+{
+  title: "Mini Database Engine",
+  description: `A C++ project emulating a basic database engine with the following features:
+  • SQL-like Command Interface
+  • Table Operations (CREATE, INSERT, SELECT, UPDATE, DELETE)
+  • Data Persistence with SAVE/LOAD
+  • Auto-incrementing IDs and Error Handling`,
+  link: "https://github.com/Aazib-Majeed/Mini_Database_Engine",
+  embed: "https://replit.com/@aazibmajeed671/MiniDatabaseEngine-1?embed=true&theme=dark", // ✅ Correct embed link
+  tools: ["C++"],
+  image: networkingImg,
+},
+
         {
           title: "Music Player",
           description: `A C++ project that basically acts like a Music Player with Features like:
@@ -133,5 +134,6 @@ export default {
 </script>
 
 <style src="../style.css"></style>
+
 
 

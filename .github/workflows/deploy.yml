@@ -3,24 +3,30 @@ name: Deploy Vite Site
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # 👈 this gives the workflow permission to push
+      contents: write   # needed for pushing to gh-pages
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 20   # Vite requires 20+
+          node-version: 18   # Vite works well on 18+
 
-      - run: npm install
-      - run: npm run build
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Deploy
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,7 +1,17 @@
 <template>
   <div class="project-card">
     <template v-if="mode === 'front'">
-      <img :src="image" :alt="title" class="project-image" />
+      <!-- Show iframe if embed exists, otherwise show image -->
+      <div v-if="embed" class="embed-container">
+        <iframe
+          :src="embed"
+          width="100%"
+          height="100%"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <img v-else :src="image" :alt="title" class="project-image" />
+
       <div class="project-info">
         <h3>{{ title }}</h3>
         <p class="tools"><strong>Tools:</strong> {{ tools.join(", ") }}</p>
@@ -22,11 +32,11 @@
 <script>
 export default {
   name: "ProjectCard",
-  props: ["title", "description", "link", "tools", "image", "mode"],
+  props: ["title", "description", "link", "tools", "image", "mode", "embed"],
   methods: {
     formatDescription(desc) {
       return desc
-        .replace(/- /g, "• ") // convert dashes to bullets
+        .replace(/- /g, "• ")
         .replace(/\n/g, "<br>");
     },
   },

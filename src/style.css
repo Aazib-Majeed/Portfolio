@@ -14,24 +14,29 @@ html {
 }
 
 :root {
+  /* ===== Theme Colors ===== */
+  --bg-primary: #2D3250;      /* dark indigo */
+  --bg-secondary: #222831;    /* charcoal gray */
+  --bg-alt: #1A1D2E;          /* deeper indigo for contrast */
+
+  --accent-primary: #D65A31;   /* warm orange */
+  --accent-secondary: #08D9D6; /* teal cyan */
+  --accent-tertiary: #F9ED69;  /* soft yellow */
+
+  --text-primary: #EEEEEE;
+  --text-secondary: #C8C8C8;
+
   /* 3D carousel sizing */
   --carousel-radius: 380px;
   --card-w: 300px;
   --card-h: 400px;
-
-  /* Theme colors */
-  --color-dark: #222831;
-  --color-main: #2D3250;
-  --color-accent: #424769;
-  --color-text: #e0e0e0;
-  --color-highlight: #f1c40f;
 }
 
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: var(--color-dark);
-  color: var(--color-text);
+  background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+  color: var(--text-primary);
   line-height: 1.6;
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -39,19 +44,19 @@ body {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  color: #ffffff;
+  color: var(--text-primary);
   font-weight: 600;
 }
 
 /* Links */
 a {
-  color: var(--color-accent);
+  color: var(--accent-secondary);
   text-decoration: none;
   transition: color 0.2s;
 }
 a:hover {
   text-decoration: underline;
-  color: #6a72b0;
+  color: var(--accent-primary);
 }
 
 /* Images */
@@ -68,7 +73,7 @@ img, video, canvas, svg {
   left: 0;
   right: 0;
   height: 60px;
-  background: var(--color-main);
+  background: rgba(34, 40, 49, 0.9); /* var(--bg-secondary) with opacity */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -82,16 +87,16 @@ img, video, canvas, svg {
 }
 .header nav a {
   margin-left: 1rem;
-  color: var(--color-text);
+  color: var(--text-primary);
   font-weight: 500;
   font-size: 1rem;
   transition: all 0.3s ease;
 }
 .header nav a:hover {
-  color: var(--color-accent);
+  color: var(--accent-secondary);
 }
 .header nav a.active {
-  color: var(--color-accent);
+  color: var(--accent-primary);
   font-size: 1.15rem;
   font-weight: 600;
   text-decoration: underline;
@@ -112,18 +117,18 @@ section {
 }
 
 section h2 {
-  border-bottom: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--bg-alt);
   padding-bottom: 8px;
   margin-bottom: 25px;
-  color: #f5f5f5;
+  color: var(--text-primary);
   font-size: 2rem;
 }
 
 /* ========= Projects ========= */
 .projects {
   width: 100%;
-  background: var(--color-main);
-  color: #fff;
+  background: linear-gradient(to right, var(--bg-primary), var(--bg-secondary));
+  color: var(--text-primary);
   text-align: center;
   padding: 3rem 1rem;
 }
@@ -137,7 +142,7 @@ section h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 80px;
+  padding-bottom: 80px; /* space for controls */
   overflow-x: hidden;
 }
 
@@ -164,14 +169,14 @@ section h2 {
   cursor: pointer;
   filter: blur(3px);
   opacity: 0.5;
-  pointer-events: none;
+  pointer-events: none; /* disable clicks unless active */
 }
 
 .memory-card.active {
   filter: blur(0);
   opacity: 1;
   pointer-events: auto;
-  transform: scale(1.05) translateZ(20px);
+  transform: scale(1.05) translateZ(20px); /* pop effect */
 }
 
 .card-inner {
@@ -198,11 +203,11 @@ section h2 {
 }
 
 .card-front {
-  background: var(--color-main);
+  background: var(--bg-primary);
 }
 
 .card-back {
-  background: var(--color-dark);
+  background: var(--bg-alt);
   transform: rotateY(180deg);
 }
 
@@ -217,9 +222,9 @@ section h2 {
 }
 
 .control-btn {
-  background: var(--color-dark);
-  border: 1px solid var(--color-accent);
-  color: white;
+  background: rgba(20, 20, 40, 0.7);
+  border: 1px solid var(--accent-secondary);
+  color: var(--text-primary);
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -231,7 +236,7 @@ section h2 {
 }
 .control-btn:hover {
   transform: scale(1.1);
-  background: var(--color-accent);
+  background: rgba(50, 50, 70, 0.9);
 }
 
 /* ========= Project Card ========= */
@@ -250,7 +255,7 @@ section h2 {
   width: 100%;
   height: 48%;
   object-fit: cover;
-  background: var(--color-dark);
+  background: var(--bg-secondary);
 }
 
 .project-info {
@@ -260,18 +265,20 @@ section h2 {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  height: auto; /* let text expand */
+  overflow: visible;
 }
 
 .project-info h3 {
   font-size: 1.25rem;
   margin: 0;
-  color: var(--color-highlight);
+  color: var(--accent-tertiary);
   line-height: 1.2;
 }
 
 .project-info p {
   margin: 0;
-  color: var(--color-text);
+  color: var(--text-secondary);
   font-size: 0.92rem;
   line-height: 1.35;
 }
@@ -279,21 +286,21 @@ section h2 {
 .project-info .tools {
   font-size: 0.85rem;
   font-weight: 400;
-  color: #a8b2b9;
+  color: var(--text-secondary);
 }
 
 .github-link {
   align-self: flex-start;
   display: inline-block;
   padding: 0.45rem 0.8rem;
-  background: var(--color-accent);
-  color: #fff;
+  background: var(--accent-primary);
+  color: var(--text-primary);
   border-radius: 10px;
   font-weight: 500;
   transition: background 0.3s;
 }
 .github-link:hover {
-  background: #6a72b0;
+  background: var(--accent-secondary);
 }
 
 /* ========= Skills ========= */
@@ -301,7 +308,6 @@ section h2 {
   width: 100%;
   text-align: center;
   padding: 3rem 1rem;
-  background: var(--color-dark);
 }
 
 .skills-grid {
@@ -319,7 +325,7 @@ section h2 {
   text-align: center;
   padding: 15px;
   border-radius: 12px;
-  background: var(--color-main);
+  background: var(--bg-alt);
   transition: transform 0.25s ease;
 }
 .skill-card:hover {
@@ -336,7 +342,7 @@ section h2 {
   width: 100%;
   padding: 4rem 2rem;
   text-align: center;
-  background: var(--color-main);
+  background: var(--bg-secondary);
 }
 
 .contact h2 {
@@ -375,16 +381,16 @@ form textarea {
   width: 100%;
   max-width: 100%;
   padding: 12px;
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--bg-alt);
   border-radius: 10px;
-  background: var(--color-dark);
-  color: var(--color-text);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   box-sizing: border-box;
 }
 
 button {
-  background-color: var(--color-accent);
-  color: white;
+  background-color: var(--accent-primary);
+  color: var(--text-primary);
   padding: 12px;
   border: none;
   border-radius: 10px;
@@ -393,7 +399,7 @@ button {
   max-width: 200px;
 }
 button:hover {
-  background-color: #6a72b0;
+  background-color: var(--accent-secondary);
 }
 
 .c-right {
@@ -419,8 +425,8 @@ button:hover {
   padding: 1.2rem 1.8rem;
   border-radius: 12px;
   text-decoration: none;
-  color: white;
-  background: var(--color-dark);
+  color: var(--text-primary);
+  background: var(--bg-alt);
   transition: transform 0.2s, background 0.3s;
   width: 100%;
   max-width: 300px;
@@ -431,7 +437,7 @@ button:hover {
   object-fit: contain;
 }
 .social-btn:hover {
-  background: var(--color-accent);
+  background: var(--accent-primary);
   transform: translateY(-3px);
 }
 
@@ -440,9 +446,9 @@ button:hover {
   width: 100%;
   text-align: center;
   font-size: 0.9rem;
-  color: gray;
+  color: var(--text-secondary);
   padding: 1rem 0;
-  background: var(--color-dark);
+  background: var(--bg-alt);
 }
 
 /* ========= Responsive ========= */

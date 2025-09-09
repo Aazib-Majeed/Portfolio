@@ -5,7 +5,7 @@
       <div class="about-text">
         <h2>About Me</h2>
         <p>
-          Hi! My name is Aazib Majeed. I am a Final year Bsc Computer Engineering student.
+          Hi! My name is Aazib Majeed. I am a Bsc Computer Engineering Graduate from UET Taxila.
           My key areas of interest include Embedded Systems,Machine Learning, and Web development.
           I have done projects in each of these domains and have a fair understanding of each, My main
           area of interest however is Embedded systems as my Final Year Project was in that domain. My main 
@@ -51,4 +51,5 @@ export default {
   height: 30%;
 }
 </style>
+
 

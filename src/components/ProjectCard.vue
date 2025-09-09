@@ -1,18 +1,7 @@
 <template>
   <div class="project-card">
     <template v-if="mode === 'front'">
-      <!-- Show iframe if embed exists, otherwise show image -->
-      <div v-if="embed" class="embed-container">
-        <iframe
-          :src="embed"
-          width="100%"
-          height="400"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <img v-else :src="image" :alt="title" class="project-image" />
-
+      <img :src="image" :alt="title" class="project-image" />
       <div class="project-info">
         <h3>{{ title }}</h3>
         <p class="tools"><strong>Tools:</strong> {{ tools.join(", ") }}</p>
@@ -33,7 +22,7 @@
 <script>
 export default {
   name: "ProjectCard",
-  props: ["title", "description", "link", "tools", "image", "mode", "embed"],
+  props: ["title", "description", "link", "tools", "image", "mode"],
   methods: {
     formatDescription(desc) {
       return desc
@@ -44,18 +33,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.embed-container {
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.project-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-</style>
+<style src="../style.css"></style>

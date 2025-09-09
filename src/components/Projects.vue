@@ -90,7 +90,7 @@ export default {
           • Data Persistence with SAVE/LOAD
           • Auto-incrementing IDs and Error Handling`,
           link: "https://github.com/Aazib-Majeed/Mini_Database_Engine",
-          embed: "https://your-repl-name.your-username.repl.co", // 🔥 Replit live demo
+          embed: "https://@aazibmajeed671/MiniDatabaseEngine-1?embed=true&theme=dark", // 🔥 Replit live demo
           tools: ["C++"],
           image: networkingImg,
         },
@@ -133,3 +133,4 @@ export default {
 </script>
 
 <style src="../style.css"></style>
+
